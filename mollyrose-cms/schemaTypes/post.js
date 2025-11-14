@@ -39,6 +39,14 @@ export default {
         hotspot: true
       }
     },
+        {
+      name: 'externalUrl',
+      title: 'External Article URL',
+      type: 'url',
+      description: 'The full URL to the original news article (e.g., https://irishtimes.com/article-title )',
+      validation: Rule => Rule.required()
+    },
+
     {
       name: 'body',
       title: 'Body',

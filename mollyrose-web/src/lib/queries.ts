@@ -1,4 +1,4 @@
-// mollyrose-web/lib/queries.ts
+// mollyrose-web/src/lib/queries.ts
 
 import { groq } from "next-sanity";
 
@@ -10,18 +10,8 @@ export const POSTS_QUERY = groq`
     "slug": slug.current,
     publishedAt,
     "mainImage": mainImage.asset->url,
-    body,
+    externalUrl, // <--- NEW FIELD
   }
 `;
 
-// Query to fetch a single post by its slug
-export const POST_SLUG_QUERY = groq`
-  *[_type == "post" && slug.current == $slug][0] {
-    _id,
-    title,
-    "slug": slug.current,
-    publishedAt,
-    "mainImage": mainImage.asset->url,
-    body,
-  }
-`;
+// We no longer need POST_SLUG_QUERY since we are not creating internal pages.
