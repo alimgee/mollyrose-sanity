@@ -14,4 +14,18 @@ export const POSTS_QUERY = groq`
   }
 `;
 
-// We no longer need POST_SLUG_QUERY since we are not creating internal pages.
+// Query to fetch the content for Molly's Story page
+export const MOLLYS_STORY_QUERY = groq`
+  *[_type == "mollysStory"][0] {
+    title,
+    body
+  }
+`;
+
+// Query to fetch the content for the About Us page
+export const ABOUT_US_QUERY = groq`
+  *[_type == "aboutUs"][0] {
+    title,
+    body
+  }
+`;
